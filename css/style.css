@@ -12,9 +12,11 @@ body {
     padding: 0 15px;
 }
 
+.scroll-hide {overflow: hidden; }
+html {scroll-behavior: smooth;}
+
 
 /*--------------------style---------------------*/
-
 
 p{
     font-size: 13px;
@@ -680,22 +682,20 @@ h2{
 
 /*-------------------------------emergancy------------------*/
 
-.emergancy, .warranties{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
-}
+
 .pic-emergancy{
     background: url('../image/emergency.jpg') no-repeat center top / cover;
 }
 
 .describe-emergancy{
+    padding: 100px 40px;
     background-color: #0048BB;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     color: #ffffff;
-    padding: 120px 200px;
+}
 
+.general-describe-emergancy, .general-describe-warrantee{
+    max-width: 450px;
 }
 
 .describe-emergancy p{
@@ -709,7 +709,7 @@ h2{
 
 .statistic{
     display: flex;
-    gap: 40px;
+    gap: 30px;
     margin-top: 40px;
 }
 
@@ -729,99 +729,84 @@ h2{
     font-weight: 600;
 }
 
-
-@media screen and (max-device-width: 1700px) and (min-device-width: 1270px){
-    .emergancy{
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-    }
-
-    .describe-emergancy{
-        padding: 120px 90px;
-    }
-
-}
-
-@media screen and (max-device-width: 1269px) and (min-device-width: 1024px){
-    .emergancy{
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    }
-    .describe-emergancy{
-        padding: 60px 50px;
-    }
+@media screen and (max-device-width: 1024px){
     .describe-statistic span{
         font-size: 36px;
     }
-    .statistic {
-        gap: 25px;
+    .describe-emergancy{
+        padding: 90px 60px;
+        align-items: flex-start;
     }
-
+    .statistic{
+        gap: 20px;
+    }
+    .describe-statistic p{
+        font-size: 11px;
+        font-weight: 500;
+    }  
 }
 
-@media screen and (max-device-width: 1023px) and (min-device-width: 768px){
-
-    .emergancy{
-        grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-    }
-
+@media screen and (max-device-width: 960px) and (min-device-width: 768px){
     .describe-emergancy{
-        padding: 90px 70px;
+        align-items: flex-start;
     }
-    .describe-statistic span{
-        font-size: 43px;
-    }
-    .statistic {
-        gap: 40px;
-    }
-    .pic-emergancy{
-        height: 450px;
+    .general-describe-emergancy, .general-describe-warrantee{
+        max-width: 100%;
     }
 }
 
 @media screen and (max-device-width: 767px) and (min-device-width: 360px){
-
-    .emergancy{
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-
-    .pic-emergancy{
-        max-width: 100%;
-        height: 450px;
-    }
-
     .describe-emergancy{
+        align-items: flex-start;
+    }
+    .statistic{
+        flex-direction: column;
+    }
+    .describe-emergancy, .describe-warrantee{
         padding: 70px 40px;
     }
-
     .describe-statistic span{
-        font-size: 43px;
-    }
-
-    .statistic {
-        flex-direction: column;
-        gap: 20px;
+        font-size: 48px;
     }
 
 }
-
 
 
 /*--------------------warranties-----------------*/
 
-.describe-warranties h2{
+.describe-warrantee h2{
     color: #4F410B;;
 }
 
-.describe-warranties{
+.describe-warrantee{
+    padding: 100px 40px;
     background-color: #FFD21F;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     color: #ffffff;
-    padding: 120px 200px;
 }
 
+@media screen and (max-device-width: 960px) and (min-device-width: 768px){
+    .describe-warrantee{
+        order: 1;
+    }
+    .pic-warrantee{
+        order: 0;
+    }
+}
 
-.list-warranties li i{
+@media screen and (max-device-width: 767px) and (min-device-width: 360px){
+    .describe-warrantee{
+        align-items: flex-start;
+    }
+    .describe-warrantee{
+        order: 1;
+    }
+    .pic-warrantee{
+        order: 0;
+    }
+}
+
+.list-warrantee li i{
     font-weight: 900;
     font-family: 'FontAwesome';
     font-size: 21px;
@@ -829,88 +814,36 @@ h2{
     margin-right: 9px;
 }
 
-.list-warranties li{
+.list-warrantee li{
     display: flex;
     align-items: center;
     font-size: 16px;
     font-weight: 700;
     color: #4F410B;
     text-transform: uppercase;
+    line-height: 25px;
 }
 
-ul.list-warranties{
+ul.list-warrantee{
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-left: 0;
 }
 
-.pic-warranties{
+.pic-warrantee{
     background: url('../image/guarantee.jpg') no-repeat center top / cover;
 }
 
-.pic-warranties, .pic-emergancy{
+.pic-warrantee, .pic-emergancy{
     max-width: 100%;
-    max-height: 640px;
-}
-
-
-@media screen and (max-device-width: 1500px) and (min-device-width: 1270px){
-    .warranties{
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-    }
-
-    .describe-warranties{
-        padding: 120px 90px;
-    }
-
-}
-
-@media screen and (max-device-width: 1269px) and (min-device-width: 1024px){
-    .warranties{
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    }
-    .describe-warranties{
-        padding: 60px 50px;
-    }
-
-}
-
-@media screen and (max-device-width: 1023px) and (min-device-width: 768px){
-    .warranties{
-        grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-    }
-
-    .describe-warranties{
-        padding: 90px 70px;
-        order: 2;
-    }
-    .pic-warranties{
-        height: 450px;
-        order: 1;
-    }
+    height: 600px;
 }
 
 @media screen and (max-device-width: 767px) and (min-device-width: 360px){
-
-    .warranties{
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-
-    .pic-warranties{
-        max-width: 100%;
+    .pic-warrantee, .pic-emergancy{
         height: 450px;
     }
-
-    .describe-warranties{
-        padding: 70px 40px;
-        order: 2;
-    }
-    .pic-warranties{
-        height: 450px;
-        order: 1;
-    }
-
 }
 
 
